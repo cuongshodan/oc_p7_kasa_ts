@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import KasaLogo from '../../assets/KasaLogo'
-import "./Header.scss"
 
 const Header = () => {
     return (
