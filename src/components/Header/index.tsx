@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <header>
             <div>
-                <KasaLogo propsColor="#FF6060" />
+                <KasaLogo propsColor="#FF6060" propsHeight={50} />
             </div>
             <nav className="navBar">
                 <ul>

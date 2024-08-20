@@ -1,12 +1,13 @@
 import KasaLogo from '../../assets/KasaLogo'
+import "./Footer.scss"
 
 const Footer = () => {
     return (
         <footer>
             <div>
-                <KasaLogo propsColor="black" />
+                <KasaLogo propsColor="white" propsHeight={30} />
             </div>
-            <p>c 2020 Kasa. All rights reserved</p>
+            <p>© 2020 Kasa. All rights reserved</p>
         </footer>
     )
 }
