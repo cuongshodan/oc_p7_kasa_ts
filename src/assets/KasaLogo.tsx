@@ -8,7 +8,7 @@ interface KasaLogoProps {
 const KasaLogo: React.FC<KasaLogoProps> = ({ propsColor, propsHeight }) => {
 
     return (
-        <svg width="211" height={propsHeight} viewBox="0 0 211 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="210" height={propsHeight} viewBox="0 0 211 68" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M20.0745 34.6485L8.84014 46.1362V62.2561H0V0H8.84014V34.8338L42.359 0H52.4883L26.1521 27.9782L54.33 62.2561H44.0165L20.0745 34.6485Z"
                 fill={propsColor} />

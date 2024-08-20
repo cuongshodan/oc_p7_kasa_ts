@@ -4,16 +4,16 @@ import KasaLogo from '../../assets/KasaLogo'
 const Header = () => {
     return (
         <header>
-            <div>
-                <KasaLogo propsColor="#FF6060" propsHeight={50} />
+            <div className="mainLogo">
+                <KasaLogo propsColor="#FF6060" propsHeight={68} />
             </div>
             <nav className="navBar">
                 <ul>
                     <li>
-                        <Link to="/">Accueil</Link>
+                        <Link to="/" className="navLink">Accueil</Link>
                     </li>
                     <li>
-                        <Link to="/apropos">A Propos</Link>
+                        <Link to="/apropos" className="navLink">A Propos</Link>
                     </li>
                 </ul>
             </nav>
