@@ -1,8 +1,10 @@
+import KasaLogo from '../../assets/KasaLogo'
+
 const Footer = () => {
     return (
         <footer>
             <div>
-                <h1>Kasa</h1>
+                <KasaLogo propsColor="black" />
             </div>
             <p>c 2020 Kasa. All rights reserved</p>
         </footer>

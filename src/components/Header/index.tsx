@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom'
+import KasaLogo from '../../assets/KasaLogo'
+import "./Header.scss"
 
 const Header = () => {
     return (
         <header>
             <div>
-                <h1>Kasa</h1>
+                <KasaLogo propsColor="#FF6060" />
             </div>
-            <div>
+            <nav className="navBar">
                 <ul>
                     <li>
                         <Link to="/">Accueil</Link>
@@ -15,7 +17,7 @@ const Header = () => {
                         <Link to="/apropos">A Propos</Link>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </header>
     )
 }
