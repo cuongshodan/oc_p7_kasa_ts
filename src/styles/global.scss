@@ -4,10 +4,15 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 }
 
 @import "../components/Header/Header.scss";
 @import "../components/Footer/Footer.scss";
+
+.pageWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}

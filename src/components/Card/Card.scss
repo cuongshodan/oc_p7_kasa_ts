@@ -1,0 +1,27 @@
+.card {
+  border-radius: 5px;
+  height: 255px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  &_Title {
+    z-index: 2;
+    position: relative;
+    padding: 10px;
+  }
+  &_Location {
+    z-index: 2;
+    position: relative;
+    padding: 10px;
+  }
+}

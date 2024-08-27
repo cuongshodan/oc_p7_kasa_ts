@@ -1,5 +1,23 @@
 .homeMain {
-  width: 1440px;
-  height: 600px;
-  background-color: rgb(241, 228, 228);
+  width: 440px;
+}
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background: rgb(125, 117, 117);
+  color: white;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+.cardSection {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 20px;
+  background: rgba(246, 246, 246, 1);
+  border-radius: 25px;
 }
