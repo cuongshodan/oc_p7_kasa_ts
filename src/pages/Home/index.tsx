@@ -1,6 +1,7 @@
 import Card from "../../components/Card"
 import "./Home.scss"
 import data from "../../database/logements.json"
+import image from "../../assets/image.png"
 
 
 const Home = () => {
@@ -8,7 +9,13 @@ const Home = () => {
         <main className="pageWrapper">
             <div className="homeMain">
                 <div className="heroSection">
-                    <h2>Chez vous, partout et ailleurs</h2>
+                    <img src={image} alt="hero" />
+                    <div className="darkLayer"></div>
+                    <h2>Chez vous,
+                        <span className="mobile-break">
+                            <br />
+                        </span> partout et ailleurs
+                    </h2>
                 </div>
                 <section className="cardSection">
                     {data.map(({ title, cover, location }) => {
