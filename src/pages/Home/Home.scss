@@ -1,5 +1,9 @@
 .homeMain {
   width: 440px;
+  border: 2px red solid;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+  }
 }
 
 .heroSection {
@@ -49,10 +53,12 @@
 .cardSection {
   display: flex;
   flex-direction: column;
+  border: 2px red solid;
   padding: 30px;
-  gap: 20px;
   @media screen and (min-width: 768px) {
-    background: rgba(246, 246, 246, 1);
-    border-radius: 25px;
+    background: rgb(236, 233, 233);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }

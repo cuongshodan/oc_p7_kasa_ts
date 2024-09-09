@@ -4,7 +4,6 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-
 }
 
 @import "../components/Header/Header.scss";
@@ -14,5 +13,5 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-
+  max-width: 1440px;
 }
