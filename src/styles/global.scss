@@ -4,14 +4,27 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  margin: 0; /* Ensure body has no default margin */
+  width: 100vw; /* Full viewport width */
+  min-height: 100vh; /* Full viewport height */
 }
 
 @import "../components/Header/Header.scss";
 @import "../components/Footer/Footer.scss";
 
 .pageWrapper {
+  width: 100%;
+  max-width: 1000px;
+
   display: flex;
   justify-content: center;
+  margin: auto;
+}
+
+.debug {
+  position: relative;
+  background-color: yellow;
   width: 100%;
-  max-width: 1440px;
+  max-width: 500px;
+  margin: auto;
 }
