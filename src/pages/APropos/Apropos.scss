@@ -43,17 +43,20 @@
   }
 }
 
+/* Apropos.scss */
+
 .collapsible-sections {
   margin: 20px 0;
 
   .collapsible-section {
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 4px;
+    overflow: hidden; // Add overflow hidden to contain the animated content
 
     .collapsible-header {
       width: 100%;
-      background: #f7f7f7;
+      background: rgba(255, 96, 96, 1);
       padding: 15px;
       text-align: left;
       font-size: 16px;
@@ -62,15 +65,34 @@
       justify-content: space-between;
       align-items: center;
       border: none;
+      color: #fff; // Adjust text color for contrast
 
       .arrow {
         font-size: 18px;
+        color: #fff; // Adjust arrow color for contrast
       }
     }
 
     .collapsible-content {
-      padding: 15px;
+      // Use max-height and transition for smooth collapsing
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+
+      padding: 0 15px; // Start with zero vertical padding
       background-color: #fff;
+
+      // For the text inside the content
+      p {
+        margin: 15px 0;
+      }
+    }
+
+    // When the section is open, adjust styles
+    &.open .collapsible-content {
+      max-height: 500px; // Set a max-height greater than the expected content height
+      padding: 15px;
+      transition: max-height 0.5s ease-in, padding 0.5s ease-in;
     }
   }
 }

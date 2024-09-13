@@ -1,3 +1,4 @@
+// CollapsibleSection.tsx
 import React, { useState } from 'react';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
@@ -14,16 +15,27 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({ title, children
     };
 
     return (
-        <div className="collapsible-section">
+        <div className={`collapsible-section${isOpen ? ' open' : ''}`}>
             <button
                 onClick={toggleSection}
                 className="collapsible-header"
                 aria-expanded={isOpen}
+                aria-controls={`section-${title}`}
             >
                 <span>{title}</span>
-                {isOpen ? <FaChevronDown /> : <FaChevronUp />}
+                {isOpen ? (
+                    <FaChevronDown className="arrow" />
+                ) : (
+                    <FaChevronUp className="arrow" />
+                )}
             </button>
-            {isOpen && <div className="collapsible-content">{children}</div>}
+            <div
+                id={`section-${title}`}
+                className="collapsible-content"
+                aria-hidden={!isOpen}
+            >
+                {children}
+            </div>
         </div>
     );
 };
