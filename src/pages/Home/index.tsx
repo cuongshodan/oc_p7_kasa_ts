@@ -1,7 +1,7 @@
 import Card from "../../components/Card"
 import "./Home.scss"
 import data from "../../database/logements.json"
-import image from "../../assets/image.png"
+import image1 from "../../assets/image1.png"
 
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
         <main className="pageWrapper">
             <div className="homeMain">
                 <div className="heroSection">
-                    <img src={image} alt="hero" />
+                    <img src={image1} alt="hero" />
                     <div className="darkLayer"></div>
                     <h2>Chez vous,
                         <span className="mobile-break">
