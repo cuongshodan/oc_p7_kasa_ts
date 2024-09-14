@@ -1,0 +1,23 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+.heroCarousel {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carouselImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.pageWrapper {
+  padding: 20px;
+}
+
+.homeMain {
+  text-align: center;
+}
