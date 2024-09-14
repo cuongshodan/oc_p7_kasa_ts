@@ -7,7 +7,7 @@ import CollapsibleSection from './CollapsibleSection'; // Adjust the path if nec
 const APropos = () => {
   return (
     <main className="pageWrapper">
-      <div className="homeMain">
+      <div className="homeMainAP">
         <div className="heroSectionAP">
           <img src={image2} alt="hero" />
           <div className="darkLayer"></div>

@@ -1,4 +1,4 @@
-.homeMain {
+.homeMainAP {
   width: 100%;
   border: 2px red solid;
   @media screen and (min-width: 768px) {
@@ -7,19 +7,14 @@
 }
 
 .heroSectionAP {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   position: relative;
-  color: white;
   border-radius: 15px;
   margin: 20px;
   overflow: hidden;
-  font-size: 16px;
   height: 150px;
   @media screen and (min-width: 768px) {
     align-items: center;
-    margin: 20px 0 20px 0;
+    margin: 20px 0 40px 0;
   }
 
   img {
