@@ -3,13 +3,11 @@ import "./Error.scss"
 
 const Error = () => {
     return (
-        <main>
-            <div className="errorContainer">
-                <div id="errorNum">404</div>
-                <div className="errorMsg">Oups! la page que vous demandez n'exist pas.</div>
-                <Link to="/">Retourner sur la page d'accueil</Link>
-            </div>
-        </main>
+        <div className="errorContainer">
+            <div id="errorNum">404</div>
+            <div className="errorMsg">Oups! la page que vous demandez n'exist pas.</div>
+            <Link to="/">Retourner sur la page d'accueil</Link>
+        </div>
     )
 }
 

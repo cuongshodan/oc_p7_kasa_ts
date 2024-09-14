@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 
 const Home = () => {
     return (
-        <main className="pageWrapper">
+        <div className="pageWrapper">
             <div className="homeMain">
                 <div className="heroSection">
                     <img src={image1} alt="hero" />
@@ -33,7 +33,7 @@ const Home = () => {
 
                 </section>
             </div>
-        </main>
+        </div>
     )
 }
 

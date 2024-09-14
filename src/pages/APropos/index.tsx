@@ -6,7 +6,7 @@ import CollapsibleSection from './CollapsibleSection'; // Adjust the path if nec
 
 const APropos = () => {
   return (
-    <main className="pageWrapper">
+    <div className="pageWrapper">
       <div className="homeMainAP">
         <div className="heroSectionAP">
           <img src={image2} alt="hero" />
@@ -35,7 +35,7 @@ const APropos = () => {
           </CollapsibleSection>
         </section>
       </div>
-    </main>
+    </div>
   );
 };
 
