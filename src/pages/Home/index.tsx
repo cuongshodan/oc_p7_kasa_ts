@@ -2,6 +2,7 @@ import Card from "../../components/Card"
 import "./Home.scss"
 import data from "../../database/logements.json"
 import image1 from "../../assets/image1.png"
+import { Link } from "react-router-dom"
 
 
 const Home = () => {
@@ -18,13 +19,15 @@ const Home = () => {
                     </h2>
                 </div>
                 <section className="cardSection">
-                    {data.map(({ title, cover, location }) => {
+                    {data.map(({ title, cover, id, location }) => {
                         return (
-                            <Card
-                                title={title}
-                                cover={cover}
-                                location={location}
-                            />
+                            <Link to={`/logement/${id}`} key={id}>
+                                <Card
+                                    title={title}
+                                    cover={cover}
+                                    location={location}
+                                />
+                            </Link>
                         )
                     })}
 
