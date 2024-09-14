@@ -26,15 +26,15 @@ const Logement = () => {
     return (
         <div className="pageWrapper">
             <div className="homeMain">
-                <div className="heroCarousel">
-                    <Slider {...settings}>
-                        {logement.pictures.map((picture, index) => (
-                            <div key={index}>
-                                <img src={picture} alt={`Slide ${index + 1}`} className="carouselImage" />
-                            </div>
-                        ))}
-                    </Slider>
-                </div>
+
+                <Slider {...settings}>
+                    {logement.pictures.map((picture, index) => (
+                        <div key={index}>
+                            <img src={picture} alt={`Slide ${index + 1}`} className="carouselImage" />
+                        </div>
+                    ))}
+                </Slider>
+
                 <h2>{logement.title}</h2>
                 <p>{logement.location}</p>
             </div>
