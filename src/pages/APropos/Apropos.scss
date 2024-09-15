@@ -1,176 +1,85 @@
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
-
-.heroCarousel {
-  position: relative;
+.homeMainAP {
   width: 100%;
-  height: 350px;
-  overflow: hidden;
-  margin: 0 auto;
-  border-radius: 15px;
-}
-
-.carouselSlide {
-  position: relative;
-}
-
-.carouselImage {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  margin: 0 auto;
-  border-radius: 15px;
-  object-fit: cover;
-}
-
-.slideNumber {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.pageWrapper {
-  padding: 20px;
-}
-
-.homeMain {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* Custom Arrow Styles */
-.custom-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.custom-prev {
-  left: 10px;
-}
-
-.custom-next {
-  right: 10px;
-}
-
-.custom-arrow img {
-  width: 50px; /* Adjust size as needed */
-  height: 50px;
-}
-
-/* Hide default arrows */
-.slick-arrow.slick-prev,
-.slick-arrow.slick-next {
-  display: none !important;
-}
-
-.appartementInfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 20px;
-
-  &__details {
-    flex: 1;
+  @media screen and (min-width: 768px) {
+    width: 100%;
   }
+}
 
-  &__locataire {
-    display: flex;
-    gap: 10px;
+.heroSectionAP {
+  position: relative;
+  border-radius: 15px;
+  margin: 20px;
+  overflow: hidden;
+  height: 150px;
+  @media screen and (min-width: 768px) {
     align-items: center;
+    margin: 20px 0 40px 0;
   }
 
-  &__locataire img {
-    width: 80px;
-    height: 80px;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 50%;
+    z-index: 1;
   }
 
-  &__hostRating {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  .darkLayer {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
   }
+}
 
-  .rating {
-    margin-top: 10px;
-  }
-
-  .star {
-    font-size: 24px;
-    margin-left: 5px;
-  }
-
+.collapsible-sections {
+  margin: 20px;
   @media screen and (min-width: 768px) {
-    flex-direction: row;
+    max-width: 800px;
+    margin: auto;
+  }
 
-    &__details {
-      flex: 2;
+  .collapsible-section {
+    margin-bottom: 25px;
+
+    .collapsible-header {
+      width: 100%;
+      background: rgba(255, 96, 96, 1);
+      border-radius: 5px;
+      padding: 10px;
+      text-align: left;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      border: none;
+
+      .arrow {
+        font-size: 18px;
+        color: #fff;
+      }
     }
 
-    &__hostRating {
-      flex: 1;
+    .collapsible-content {
+      overflow: hidden;
+      background-color: #fff;
+      padding: 0 15px;
+
+      p {
+        margin: 15px 0;
+      }
     }
-  }
-}
 
-/* Star Colors */
-.star {
-  color: #e3e3e3; /* Light grey for empty stars */
-}
-
-.star.filled {
-  color: rgba(255, 96, 96, 1); /* Filled star color */
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.tag {
-  background-color: #e3e3e3;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-/* Adjust host image in appartementInfo */
-.appartementInfo__locataire img {
-  width: 64px;
-  height: 64px;
-}
-
-/* Adjustments for the description and equipment sections */
-.descriptionEquipments {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  > div {
-    flex: 1;
-    background-color: #f6f6f6;
-    padding: 20px;
-    border-radius: 10px;
+    .collapsible-content.open {
+      max-height: 1000px; // Ensure this is larger than your content height
+    }
   }
 }

@@ -79,6 +79,19 @@
 .appartementInfo {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  &__details h2 {
+    color: rgba(255, 96, 96, 1);
+  }
+  &__details p {
+    font-weight: 500;
+  }
+
+  &__details {
+    flex: 1;
+  }
 
   &__locataire {
     display: flex;
@@ -89,12 +102,83 @@
   &__locataire img {
     width: 80px;
     height: 80px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 50%;
   }
 
+  &__hostRating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .rating {
+    margin-top: 10px;
+  }
+
+  .star {
+    font-size: 24px;
+    margin-left: 5px;
+  }
+
   @media screen and (min-width: 768px) {
-    justify-content: space-between;
     flex-direction: row;
+
+    &__details {
+      flex: 2;
+    }
+
+    &__hostRating {
+      flex: 1;
+    }
+  }
+}
+
+/* Star Colors */
+.star {
+  color: #e3e3e3; /* Light grey for empty stars */
+}
+
+.star.filled {
+  color: rgba(255, 96, 96, 1); /* Filled star color */
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tag {
+  background-color: rgba(255, 96, 96, 1);
+  color: #fff;
+  padding: 5px 30px;
+  border-radius: 10px;
+}
+
+/* Adjust host image in appartementInfo */
+.appartementInfo__locataire img {
+  width: 64px;
+  height: 64px;
+}
+
+/* Adjustments for the description and equipment sections */
+.descriptionEquipments {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  > div {
+    flex: 1;
+    background-color: rgba(255, 96, 96, 1);
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
   }
 }
