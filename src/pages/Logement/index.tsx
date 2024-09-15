@@ -84,8 +84,25 @@ const Logement = () => {
                         ))}
                     </Slider>
                 </div>
-                <h2>{logement.title}</h2>
-                <p>{logement.location}</p>
+                <div className="appartementInfo">
+                    <div>
+                        <h2>{logement.title}</h2>
+                        <p>{logement.location}</p>
+                        <p>{logement.tags[0]} {logement.tags[1]}</p>
+                    </div>
+                    <div>
+                        <div className="appartementInfo__locataire">
+                            <p>{logement.host.name}</p>
+                            <img src={logement.host.picture} />
+                        </div>
+                        <div>ratings</div>
+                    </div>
+                </div>
+                <div>
+                    <div>Description</div>
+                    <div>Equipements</div>
+                </div>
+
             </div>
         </div>
     );

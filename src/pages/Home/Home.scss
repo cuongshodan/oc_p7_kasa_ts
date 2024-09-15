@@ -1,6 +1,6 @@
 .homeMain {
   width: 100%;
-  border: 2px red solid;
+
   @media screen and (min-width: 768px) {
     width: 100%;
   }
@@ -9,7 +9,6 @@
 .heroSection {
   display: flex;
   flex-direction: column;
-
   gap: 20px;
   position: relative;
   color: white;
@@ -66,5 +65,28 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     border-radius: 25px;
+  }
+}
+
+.appartementInfo {
+  display: flex;
+  flex-direction: column;
+
+  &__locataire {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__locataire img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+    flex-direction: row;
   }
 }
