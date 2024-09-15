@@ -75,3 +75,26 @@
 .slick-arrow.slick-next {
   display: none !important;
 }
+
+.appartementInfo {
+  display: flex;
+  flex-direction: column;
+
+  &__locataire {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__locataire img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}

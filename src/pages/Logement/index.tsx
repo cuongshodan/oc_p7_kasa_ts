@@ -8,6 +8,11 @@ import data from "../../database/logements.json";
 import leftArrowIcon from "../../assets/left-arrow.svg";
 import rightArrowIcon from "../../assets/right-arrow.svg";
 
+// Import Font Awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as filledStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
+
 // Custom Arrow Components
 const CustomPrevArrow = (props: any) => {
     const { style, onClick } = props;
@@ -65,6 +70,13 @@ const Logement = () => {
         nextArrow: <CustomNextArrow />,
     };
 
+    // Convert rating to a number
+    const rating = Number(logement.rating);
+
+    // Create an array of 5 elements for the stars
+    const maxRating = 5;
+    const stars = Array.from({ length: maxRating }, (_, index) => index + 1);
+
     return (
         <div className="pageWrapper">
             <div className="homeMain">
@@ -85,24 +97,37 @@ const Logement = () => {
                     </Slider>
                 </div>
                 <div className="appartementInfo">
-                    <div>
+                    <div className="appartementInfo__details">
                         <h2>{logement.title}</h2>
                         <p>{logement.location}</p>
-                        <p>{logement.tags[0]} {logement.tags[1]}</p>
+                        <div className="tags">
+                            {logement.tags.map((tag, index) => (
+                                <span key={index} className="tag">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
                     </div>
-                    <div>
+                    <div className="appartementInfo__hostRating">
                         <div className="appartementInfo__locataire">
                             <p>{logement.host.name}</p>
-                            <img src={logement.host.picture} />
+                            <img src={logement.host.picture} alt={logement.host.name} />
                         </div>
-                        <div>ratings</div>
+                        <div className="rating">
+                            {stars.map((star) => (
+                                <FontAwesomeIcon
+                                    key={star}
+                                    icon={star <= rating ? filledStar : emptyStar}
+                                    className={star <= rating ? "star filled" : "star"}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
-                <div>
+                <div className="descriptionEquipments">
                     <div>Description</div>
                     <div>Equipements</div>
                 </div>
-
             </div>
         </div>
     );
