@@ -1,3 +1,4 @@
+import React from 'react';
 import "./Logement.scss";
 import { useParams, Navigate } from "react-router-dom";
 import Slider from "react-slick";
@@ -12,6 +13,9 @@ import rightArrowIcon from "../../assets/right-arrow.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as filledStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
+
+// Import CollapsibleSection component
+import CollapsibleSection from '../../components/CollapsibleSection/CollapsibleSection'; // Adjust the path if necessary
 
 // Custom Arrow Components
 const CustomPrevArrow = (props: any) => {
@@ -125,8 +129,18 @@ const Logement = () => {
                     </div>
                 </div>
                 <div className="descriptionEquipments">
-                    <div>Description</div>
-                    <div>Equipements</div>
+                    <section className="collapsible-sections-logement">
+                        <CollapsibleSection title="Description">
+                            <p>{logement.description}</p>
+                        </CollapsibleSection>
+                        <CollapsibleSection title="Équipements">
+                            <ul>
+                                {logement.equipments.map((equipment, index) => (
+                                    <li key={index}>{equipment}</li>
+                                ))}
+                            </ul>
+                        </CollapsibleSection>
+                    </section>
                 </div>
             </div>
         </div>

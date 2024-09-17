@@ -2,7 +2,7 @@
 import React from 'react';
 import image2 from "../../assets/image2.png";
 import "./Apropos.scss";
-import CollapsibleSection from './CollapsibleSection'; // Adjust the path if necessary
+import CollapsibleSection from '../../components/CollapsibleSection/CollapsibleSection'; // Adjust the path if necessary
 
 const APropos = () => {
   return (
