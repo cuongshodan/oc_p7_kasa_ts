@@ -11,7 +11,7 @@ const Home = () => {
             <div className="homeMain">
                 <div className="heroSection">
                     <img src={image1} alt="hero" />
-                    <div className="darkLayer"></div>
+                    <div className="darkLayerHome"></div>
                     <h2>Chez vous,
                         <span className="mobile-break">
                             <br />

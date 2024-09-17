@@ -10,12 +10,14 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  justify-content: center;
   position: relative;
   color: white;
   border-radius: 10px;
   margin: 20px;
   overflow: hidden;
   font-size: 16px;
+  height: 150PX;
   @media screen and (min-width: 768px) {
     align-items: center;
     margin: 20px 0 20px 0;
@@ -37,7 +39,7 @@
     padding: 10px;
   }
 
-  .darkLayer {
+  .darkLayerHome {
     z-index: 1;
     position: absolute;
     top: 0;
@@ -57,7 +59,6 @@
 .cardSection {
   display: flex;
   flex-direction: column;
-  border: 2px red solid;
   padding: 30px;
   gap: 20px;
   @media screen and (min-width: 768px) {
@@ -67,5 +68,3 @@
     border-radius: 25px;
   }
 }
-
-
