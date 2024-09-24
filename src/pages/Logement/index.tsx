@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Logement.scss";
 import { useParams, Navigate } from "react-router-dom";
-import Slider from "react-slick";
-import { useState } from "react";
 import data from "../../database/logements.json";
 
 // Import your custom arrow icons
@@ -17,35 +15,6 @@ import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 // Import CollapsibleSection component
 import CollapsibleSection from '../../components/CollapsibleSection/CollapsibleSection'; // Adjust the path if necessary
 
-// Custom Arrow Components
-const CustomPrevArrow = (props: any) => {
-    const { style, onClick } = props;
-    return (
-        <button
-            className="custom-arrow custom-prev"
-            style={{ ...style }}
-            onClick={onClick}
-            aria-label="Previous Slide"
-        >
-            <img src={leftArrowIcon} alt="Previous" />
-        </button>
-    );
-};
-
-const CustomNextArrow = (props: any) => {
-    const { style, onClick } = props;
-    return (
-        <button
-            className="custom-arrow custom-next"
-            style={{ ...style }}
-            onClick={onClick}
-            aria-label="Next Slide"
-        >
-            <img src={rightArrowIcon} alt="Next" />
-        </button>
-    );
-};
-
 const Logement = () => {
     const { id } = useParams();
     const logement = data.find((item) => item.id === id);
@@ -58,20 +27,12 @@ const Logement = () => {
     // State to keep track of the current slide index
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    // Carousel settings for react-slick
-    const settings = {
-        dots: false, // Disable dots
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: false,
-        arrows: true, // Enable arrows
-        beforeChange: (oldIndex: number, newIndex: number) => {
-            setCurrentSlide(newIndex);
-        },
-        prevArrow: <CustomPrevArrow />,
-        nextArrow: <CustomNextArrow />,
+    const handleNext = () => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % logement.pictures.length);
+    };
+
+    const handlePrev = () => {
+        setCurrentSlide((prevSlide) => (prevSlide - 1 + logement.pictures.length) % logement.pictures.length);
     };
 
     // Convert rating to a number
@@ -85,20 +46,36 @@ const Logement = () => {
         <div className="pageWrapper">
             <div className="homeMain">
                 <div className="heroCarousel">
-                    <Slider {...settings}>
-                        {logement.pictures.map((picture, index) => (
-                            <div key={index} className="carouselSlide">
-                                <img
-                                    src={picture}
-                                    alt={`Slide ${index + 1}`}
-                                    className="carouselImage"
-                                />
-                                <div className="slideNumber">
-                                    {`${currentSlide + 1}/${logement.pictures.length}`}
-                                </div>
+                    <div className="carouselSlide">
+                        <img
+                            src={logement.pictures[currentSlide]}
+                            alt={`Slide ${currentSlide + 1}`}
+                            className="carouselImage"
+                        />
+                        {logement.pictures.length > 1 && (
+                            <div className="slideNumber">
+                                {`${currentSlide + 1}/${logement.pictures.length}`}
                             </div>
-                        ))}
-                    </Slider>
+                        )}
+                        {logement.pictures.length > 1 && (
+                            <>
+                                <button
+                                    className="custom-arrow custom-prev"
+                                    onClick={handlePrev}
+                                    aria-label="Previous Slide"
+                                >
+                                    <img src={leftArrowIcon} alt="Previous" />
+                                </button>
+                                <button
+                                    className="custom-arrow custom-next"
+                                    onClick={handleNext}
+                                    aria-label="Next Slide"
+                                >
+                                    <img src={rightArrowIcon} alt="Next" />
+                                </button>
+                            </>
+                        )}
+                    </div>
                 </div>
                 <div className="appartementInfo">
                     <div className="appartementInfo__details">
