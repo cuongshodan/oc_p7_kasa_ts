@@ -1,0 +1,43 @@
+.collapsible-section {
+    .collapsible-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: none;
+      border: none;
+      width: 100%;
+      padding: 0.5rem 0;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #333;
+  
+      .arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+  
+      .arrow.open {
+        transform: rotate(180deg);
+      }
+  
+      .arrow-icon {
+        width: 1em;
+        height: 1em;
+      }
+    }
+  
+    .collapsible-content {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      padding: 0 0;
+    }
+  
+    .collapsible-content.open {
+      max-height: 500px; /* Adjust as needed */
+      opacity: 1;
+      padding: 0.5rem 0;
+    }
+  }
+  
