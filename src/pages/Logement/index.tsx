@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import "./Logement.scss";
 import { useParams, Navigate } from "react-router-dom";
 import data from "../../database/logements.json";

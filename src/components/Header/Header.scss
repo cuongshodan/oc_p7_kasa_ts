@@ -37,3 +37,21 @@ header {
     }
   }
 }
+
+/* Header.scss or your CSS file */
+
+.navLink {
+  text-decoration: none;
+  color: #000; /* Or your desired color */
+  padding: 0.5rem 1rem;
+}
+
+.navLink:hover {
+  text-decoration: underline;
+}
+
+.navLink.active {
+  text-decoration: underline;
+  color: #FF6060; /* Optional: change color for active link */
+}
+
