@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import KasaLogo from '../../assets/KasaLogo';
 
@@ -7,11 +6,13 @@ const Header = () => {
     <header className="pageWrapper">
       <div className="headerWrapper">
         <div className="mainLogo">
-          <KasaLogo
-            propsColor="#FF6060"
-            propsWidth={145}
-            propsHeight={46}
-          />
+          <NavLink to="/">
+            <KasaLogo
+              propsColor="#FF6060"
+              propsWidth={145}
+              propsHeight={46}
+            />
+          </NavLink>
         </div>
         <nav className="navBar">
           <ul>
