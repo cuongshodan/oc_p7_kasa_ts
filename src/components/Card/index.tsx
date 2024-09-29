@@ -8,7 +8,7 @@ interface CardProps {
 }
 
 
-const Card = ({ title, cover, location }: CardProps) => {
+const Card = ({ title, cover }: CardProps) => {
     return (
         <div className="card">
             <img src={cover} alt={title} />

@@ -13,18 +13,16 @@ import { faStar as filledStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 
 // Import CollapsibleSection component
-import CollapsibleSection from '../../components/CollapsibleSection/CollapsibleSection'; // Adjust the path if necessary
+import CollapsibleSection from '../../components/CollapsibleSection/CollapsibleSection';
 
 const Logement = () => {
     const { id } = useParams();
     const logement = data.find((item) => item.id === id);
 
     if (!logement) {
-        // Redirect to a non-existent route to trigger the 404 page
         return <Navigate to="/not-found" replace />;
     }
 
-    // State to keep track of the current slide index
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const handleNext = () => {
@@ -35,10 +33,8 @@ const Logement = () => {
         setCurrentSlide((prevSlide) => (prevSlide - 1 + logement.pictures.length) % logement.pictures.length);
     };
 
-    // Convert rating to a number
     const rating = Number(logement.rating);
 
-    // Create an array of 5 elements for the stars
     const maxRating = 5;
     const stars = Array.from({ length: maxRating }, (_, index) => index + 1);
 
