@@ -2,7 +2,7 @@
 @import "./normalize";
 
 * {
-  box-sizing: border-box; /* Ensures padding and borders are included in width calculations */
+  box-sizing: border-box;
 }
 
 html,
@@ -25,18 +25,7 @@ body {
   display: flex;
   justify-content: center;
   margin: auto;
-  padding: 0 0px;
+  /* padding: 0 0px; */
   box-sizing: border-box;
 }
 
-.debug2 {
-  background-color: red;
-}
-.debug {
-  position: relative;
-  background-color: yellow;
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
-  border: 1px solid blue; /* Outline for debugging layout issues */
-}

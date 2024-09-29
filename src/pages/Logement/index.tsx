@@ -39,7 +39,7 @@ const Logement = () => {
     const stars = Array.from({ length: maxRating }, (_, index) => index + 1);
 
     return (
-        <div className=" logementWrapper">
+        <div className="pageWrapper logementWrapper">
             <div className="homeMain">
                 <div className="heroCarousel">
                     <div className="carouselSlide">
