@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CollapsibleSection.scss'; 
+import './CollapsibleSection.scss';
 
 interface CollapsibleSectionProps {
   title: string;

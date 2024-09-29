@@ -1,19 +1,16 @@
-import { useState } from 'react';
-import "./Logement.scss";
-import { useParams, Navigate } from "react-router-dom";
-import data from "../../database/logements.json";
-
-// Import your custom arrow icons
-import leftArrowIcon from "../../assets/left-arrow.svg";
-import rightArrowIcon from "../../assets/right-arrow.svg";
+import { useParams, Navigate } from 'react-router-dom';
+import data from '../../database/logements.json';
 
 // Import Font Awesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar as filledStar } from "@fortawesome/free-solid-svg-icons";
-import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar as filledStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons';
 
-// Import CollapsibleSection component
+// Import components
 import CollapsibleSection from '../../components/CollapsibleSection/CollapsibleSection';
+import Carousel from '../../components/Carousel';
+
+import './Logement.scss';
 
 const Logement = () => {
     const { id } = useParams();
@@ -23,56 +20,14 @@ const Logement = () => {
         return <Navigate to="/not-found" replace />;
     }
 
-    const [currentSlide, setCurrentSlide] = useState(0);
-
-    const handleNext = () => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % logement.pictures.length);
-    };
-
-    const handlePrev = () => {
-        setCurrentSlide((prevSlide) => (prevSlide - 1 + logement.pictures.length) % logement.pictures.length);
-    };
-
     const rating = Number(logement.rating);
-
     const maxRating = 5;
     const stars = Array.from({ length: maxRating }, (_, index) => index + 1);
 
     return (
         <div className="pageWrapper logementWrapper">
             <div className="homeMain">
-                <div className="heroCarousel">
-                    <div className="carouselSlide">
-                        <img
-                            src={logement.pictures[currentSlide]}
-                            alt={`Slide ${currentSlide + 1}`}
-                            className="carouselImage"
-                        />
-                        {logement.pictures.length > 1 && (
-                            <div className="slideNumber">
-                                {`${currentSlide + 1}/${logement.pictures.length}`}
-                            </div>
-                        )}
-                        {logement.pictures.length > 1 && (
-                            <>
-                                <button
-                                    className="custom-arrow custom-prev"
-                                    onClick={handlePrev}
-                                    aria-label="Previous Slide"
-                                >
-                                    <img src={leftArrowIcon} alt="Previous" />
-                                </button>
-                                <button
-                                    className="custom-arrow custom-next"
-                                    onClick={handleNext}
-                                    aria-label="Next Slide"
-                                >
-                                    <img src={rightArrowIcon} alt="Next" />
-                                </button>
-                            </>
-                        )}
-                    </div>
-                </div>
+                <Carousel pictures={logement.pictures} />
                 <div className="appartementInfo">
                     <div className="appartementInfo__details">
                         <h2>{logement.title}</h2>
@@ -95,7 +50,7 @@ const Logement = () => {
                                 <FontAwesomeIcon
                                     key={star}
                                     icon={star <= rating ? filledStar : emptyStar}
-                                    className={star <= rating ? "star filled" : "star"}
+                                    className={star <= rating ? 'star filled' : 'star'}
                                 />
                             ))}
                         </div>
