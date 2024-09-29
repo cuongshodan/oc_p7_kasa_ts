@@ -3,9 +3,13 @@ import "./Footer.scss"
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className="">
             <div>
-                <KasaLogo propsColor="white" propsWidth={122} propsHeight={40} />
+                <KasaLogo
+                    propsColor="white"
+                    propsWidth={122}
+                    propsHeight={40}
+                />
             </div>
             <p>© 2020 Kasa. All rights reserved</p>
         </footer>
